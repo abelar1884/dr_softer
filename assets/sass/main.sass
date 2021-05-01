@@ -1,1 +1,23 @@
+@import "topbar"
+@import "bottombar"
+@import "slider"
+@import "info-block"
 
+@import "../fonts/roboto.css"
+
+@import 'node_modules/vue-slick-carousel/dist/vue-slick-carousel.css'
+
+$material-icons-font-path: '~material-icons/iconfont/'
+@import '~material-icons/iconfont/material-icons.scss'
+
+.content
+  font-family: Roboto
+  color: #1E1E1E
+
+.page
+  padding: 44px 0 112px 0
+
+.btn-non-focus
+  &:focus
+    outline: none !important
+    box-shadow: none

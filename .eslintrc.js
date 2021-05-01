@@ -14,5 +14,7 @@ module.exports = {
   plugins: [
   ],
   // add your custom rules here
-  rules: {}
+  rules: {
+    'vue/component-definition-name-casing': ['error', 'kebab-case']
+  }
 }

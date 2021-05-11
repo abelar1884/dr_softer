@@ -1,11 +1,13 @@
 <template>
   <div class="slider">
-    <b-carousel
-      v-model="slide"
-      indicators
-    >
-      <b-carousel-slide v-for="(image, key) in images" :img-src="image" :key="key"/>
-    </b-carousel>
+    <swiper class="slider" :options="options">
+      <swiper-slide v-for="(image, key) in images" :key="key">
+        <div class="slider__slide" :style="'background-image: url('+image+')'"></div>
+      </swiper-slide>
+      <div class="slider__dots" slot="pagination">
+        <span v-for="(item, key) in images" :key="key"></span>
+      </div>
+    </swiper>
   </div>
 </template>
 
@@ -20,7 +22,16 @@ export default {
         require('assets/images/slide_1.jpg'),
         require('assets/images/slide_1.jpg'),
         require('assets/images/slide_1.jpg'),
-      ]
+      ],
+      options: {
+        autoplay : {
+          delay: 5000
+        },
+        pagination: {
+          el: '.slider__dots',
+          type: 'bullets'
+        }
+      }
     }
   }
 }

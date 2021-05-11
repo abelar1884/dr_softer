@@ -21,6 +21,12 @@
         </button>
       </div>
     </div>
+    <!-- TODO - make reload btn  -->
+    <button class="btn btn-reload" style="display: none">
+      <span class="material-icons-outlined">
+        cached
+      </span>
+    </button>
   </div>
 </template>
 

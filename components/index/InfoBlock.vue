@@ -20,7 +20,7 @@
 
       </div>
       <b-collapse :id="'collapse-' + category.id" class="info-block__content" visible>
-        <swiper ref="mySwiper" :options="option">
+        <swiper ref="mySwiper" :options="option" class="info-block__slider">
           <!-- slides -->
           <swiper-slide v-for="(item, key) in category.ready_education_programs" :key="key">
             <div class="swiper__image"></div>
@@ -40,10 +40,6 @@
 </template>
 
 <script>
-
-
-  import axios from '~/.nuxt/axios'
-
   export default {
     name: 'InfoBlock',
     props: {

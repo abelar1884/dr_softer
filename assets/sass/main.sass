@@ -2,6 +2,8 @@
 @import "bottombar"
 @import "slider"
 @import "info-block"
+@import "index"
+@import "program"
 
 @import "../fonts/roboto.css"
 
@@ -21,3 +23,13 @@ $material-icons-font-path: '~material-icons/iconfont/'
   &:focus
     outline: none !important
     box-shadow: none
+
+a
+  &:hover
+    color: white
+    text-decoration: none
+
+.page-enter-active, .page-leave-active
+  transition: opacity .5s
+.page-enter, .page-leave-active
+  opacity: 0

@@ -1,45 +1,79 @@
 <template>
-  <page-layout>
-    <slider/>
-    <info-block :category="category" v-for="(category, key) in categories" :key="key" v-if="category.education_programs_count"/>
+  <div class="index">
+		<div class="program program_big_themes" :style="'background-image: url('+img+')'">
+			<div class="program_inner">
+				<div class="program__title">Название другой программы в несколько строк</div>
 
-    <div class="alert error" v-if="error">
-      {{error}}
-    </div>
-  </page-layout>
+				<div class="program__control program_control_indent">
+					<div class="program__control_btn program__control_btn_mb">
+						<span class="material-icons">
+							star
+						</span>
+					</div>
+					<div class="program__control_btn program__control_btn_mb">
+						<span class="material-icons">
+							favorite
+						</span>
+					</div>
+					<div class="program__control_btn program__control_btn_mb">
+						<span class="material-icons">
+							insert_comment
+						</span>
+					</div>
+					<div class="program__control_btn">
+						<span class="material-icons">
+							notifications_active
+						</span>
+					</div>
+				</div>
+
+				<div class="program__info">
+					<div class="program__stats program_stats_mb">
+						<div class="program__stats_like program_stats_mr">
+							<span class="material-icons">
+								star
+							</span>
+							12
+						</div>
+						<div class="program__stats_views program_stats_mr">
+							<span class="material-icons">
+								people
+							</span>
+
+							452
+						</div>
+						<div class="program__stats_duration">
+							<span class="material-icons">
+								query_builder
+							</span>
+
+							1 час 23 мин
+						</div>
+					</div>
+
+					<div class="program__tags">
+						<div class="program__tag" v-for="(item, key) in tags" :key="key">
+							#тэг{{item}}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+  </div>
 </template>
 
 <script>
-import PageLayout from '~/layouts/page'
-import Slider from '~/components/index/Slider'
-import InfoBlock from '~/components/index/InfoBlock'
-
-export default {
-  components: { InfoBlock, Slider, PageLayout },
-  data() {
-    return {
-      categories: null,
-      error: null
-    }
-  },
-  created () {
-    this.getCategories();
-  },
-  methods: {
-    async getCategories() {
-      let self = this;
-
-      await this.$axios.get('categories').then(function (response) {
-        self.categories = response.data.data;
-      }).catch(function (response) {
-        self.error = response;
-      });
-    }
+  export default {
+    name: 'index',
+		data() {
+    	return {
+    		img: require('assets/images/program_img.png'),
+				tags: 3
+			}
+		}
   }
-
-}
 </script>
 
-<style>
+<style scoped>
 
 </style>

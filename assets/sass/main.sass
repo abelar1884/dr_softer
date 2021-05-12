@@ -4,6 +4,7 @@
 @import "info-block"
 @import "index"
 @import "program"
+@import "program-index"
 
 @import "../fonts/roboto.css"
 
@@ -13,23 +14,44 @@ $material-icons-font-path: '~material-icons/iconfont/'
 @import '~material-icons/iconfont/material-icons.scss'
 
 .content
-  font-family: Roboto
-  color: #1E1E1E
+	font-family: Roboto
+	color: #1E1E1E
 
 .page
-  padding: 44px 0 112px 0
+	padding: 44px 0 112px 0
 
 .btn-non-focus
-  &:focus
-    outline: none !important
-    box-shadow: none
+	&:focus
+		outline: none !important
+		box-shadow: none
 
 a
-  &:hover
-    color: white
-    text-decoration: none
+	&:hover
+		color: white
+		text-decoration: none
 
 .page-enter-active, .page-leave-active
-  transition: opacity .5s
+	transition: opacity .5s
+
 .page-enter, .page-leave-active
-  opacity: 0
+	opacity: 0
+
+.btn-back
+	padding: 0
+	position: fixed
+	z-index: 99
+	color: white
+	width: 60px
+	height: 60px
+	background: transparent linear-gradient(122deg, #00F6FF 0%, #44A7FE 100%) 0% 0% no-repeat padding-box
+	border-radius: 0
+	border: none
+	opacity: .9
+	display: flex
+	align-items: center
+	justify-content: center
+	.material-icons
+		font-size: 35px !important
+		font-weight: bold
+
+
